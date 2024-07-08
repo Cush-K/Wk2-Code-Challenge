@@ -1,16 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shopping Site</title>
-    <link rel="stylesheet" href="challenge.css">
-    <script src="challenge.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Shopping</title>
+  <link href="challenge.css" rel="stylesheet" type="text/css" />
 </head>
+
 <body>
     <header>
-        <h1>Shopping Website</h1>
-    </header>
-    
+         <h1 class="title">The Shopping Site</h1>
+   </header>
+  <main>
+  <div>
+    <h2>Items List</h2>
+    <ul class="items"> </ul>
+  </div>
+    <div>
+      <h2 id="secondh2">Purchased Items</h2>
+      <ul class="purchased"> </ul>
+    </div>
+    <div class="addItems">
+      <h2>Add Items to List</h2>
+      <form>
+        <div>
+            <input type="text" name="add" id="add" placeholder="Add New Items to list"/>
+            <input type="submit" id="addButton" value="Add"/>
+        </div> 
+        </form>
+    </div>
+
+  </main>
+
+  <script type="module" src="challenge.js"></script>
+
 </body>
+
 </html>
