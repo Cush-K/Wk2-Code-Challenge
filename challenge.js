@@ -5,6 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
         addItems();
         form.reset();
     });
+    const clearBtn = document.querySelector('.clearList');
+    clearBtn.addEventListener('click', clearPurchasedList);
 
     listing();
 });
@@ -40,9 +42,6 @@ function listing() {
 function deleteItems (e){
     e.target.parentNode.remove()
 }
-function deleteChildNodes (e){
-    e.target.children.remove()
-}
 
 function addItems() {
     const addStuff = document.querySelector('#add').value;
@@ -74,11 +73,10 @@ function updatePurchasedList(){
         deleteBtn.textContent = "Del"
         deleteBtn.addEventListener(`click`, deleteItems)
         li.appendChild(deleteBtn);
-
-        // const clear = document.querySelector('#secondh2');
-        // const clearBtn = document.createElement(`button`);
-        // clearBtn.textContent = "Clear List"
-        // clearBtn.addEventListener(`click`, deleteChildNodes)
-        // clear.appendChild(clearBtn);
     });
+}
+
+const clearPurchasedList = () => {
+    purchasedItems.length=0;
+    updatePurchasedList();
 }
