@@ -12,12 +12,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 //creates a clear button to clear the purchase list and ensures that it runs after all the content has loaded
     const clearBtn = document.querySelector('.clearList');
+    const clearListBtn = document.querySelector('.clearItems');
+
+    clearListBtn.addEventListener('click', clearItemsList);
     clearBtn.addEventListener('click', clearPurchasedList);
 
     listing();
 });
 
-const items = ['item 1', 'item 2', 'item 3', 'item 4', 'item 5', 'item 6', 'item 7'];
+const items = []; //Creates an empty items array
 
 const purchasedItems = []; //Creates an empty array to push purchased items into
 
@@ -99,4 +102,10 @@ function updatePurchasedList(){
 function clearPurchasedList() {
     purchasedItems.length=0;
     updatePurchasedList();
+}
+
+//function to clear the purchase list items
+function clearItemsList() {
+    items.length=0;
+    listing();
 }
